@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Sampah Unit RW 015</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-emerald-50 font-sans pb-10">
+
+    <!-- HEADER -->
+    <header class="bg-emerald-600 text-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+
+            <h1 class="text-xl md:text-2xl font-bold">
+                ♻️ Bank Sampah Unit RW 015
+            </h1>
+
+            <p class="text-xs md:text-sm bg-emerald-700 px-3 py-1 rounded-full">
+                Ubah Sampah Jadi Berkah
+            </p>
+
+        </div>
+    </header>
+
+
+    <!-- KONTEN UTAMA -->
+    <main class="container mx-auto px-4 py-8 max-w-3xl space-y-8">
+
+        <!-- DAFTAR HARGA -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+
+            <h2 class="text-lg font-semibold text-gray-800 mb-3">
+                📊 Daftar Harga Sampah (Per Kg)
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-sm text-gray-600">Botol Plastik</p>
+                    <p class="text-base font-bold text-emerald-700">
+                        Rp 3.000
+                    </p>
+                </div>
+
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-sm text-gray-600">Gelas Plastik</p>
+                    <p class="text-base font-bold text-emerald-700">
+                        Rp 3.000
+                    </p>
+                </div>
+
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-sm text-gray-600">Kardus</p>
+                    <p class="text-base font-bold text-emerald-700">
+                        Rp 1.000
+                    </p>
+                </div>
+
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-sm text-gray-600">Minyak Jelantah</p>
+                    <p class="text-base font-bold text-emerald-700">
+                        Rp 4.000
+                    </p>
+                </div>
+
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-sm text-gray-600">Emberan</p>
+                    <p class="text-base font-bold text-emerald-700">
+                        Rp 1.000
+                    </p>
+                </div>
+
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-sm text-gray-600">Kaleng</p>
+                    <p class="text-base font-bold text-emerald-700">
+                        Rp 1.300
+                    </p>
+                </div>
+
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-sm text-gray-600">Galon Le Minerale</p>
+                    <p class="text-base font-bold text-emerald-700">
+                        Rp 3.000
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- FORM SETOR SAMPAH -->
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">
+                Formulir Setor Sampah
+            </h2>
+
+            <p class="text-gray-600 text-sm mb-6">
+                Pilih jenis dan masukkan berat sampah Anda.
+                Estimasi saldo akan otomatis dihitung.
+            </p>
+
+
+            <form id="formBankSampah" class="space-y-4">
+
+                <!-- NAMA -->
+                <div>
+
+                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                        Nama Lengkap
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        required
+                        placeholder="Masukkan nama lengkap"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    >
+
+                </div>
+
+
+                <!-- JENIS SAMPAH -->
+                <div>
+
+                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                        Jenis Sampah
+                    </label>
+
+                    <select
+                        id="jenisSampah"
+                        name="jenisSampah"
+                        required
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    >
+
+                        <option value="">
+                            -- Pilih Jenis Sampah --
+                        </option>
+
+                        <option value="botol plastik" data-harga="3000">
+                            Botol Plastik (Rp 3.000/kg)
+                        </option>
+
+                        <option value="gelas plastik" data-harga="3000">
+                            Gelas Plastik (Rp 3.000/kg)
+                        </option>
+
+                        <option value="kardus" data-harga="1000">
+                            Kardus (Rp 1.000/kg)
+                        </option>
+
+                        <option value="Minyak Jelantah" data-harga="4000">
+                            Minyak Jelantah (Rp 4.000/kg)
+                        </option>
+
+                        <option value="emberan" data-harga="1000">
+                            Emberan (Rp 1.000/kg)
+                        </option>
+
+                        <option value="kaleng" data-harga="1300">
+                            Kaleng (Rp 1.300/kg)
+                        </option>
+
+                        <option value="galon le mineral" data-harga="3000">
+                            Galon Le Minerale (Rp 3.000/kg)
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BERAT DAN TOTAL -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <!-- BERAT -->
+                    <div>
+
+                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                            Berat (Kg)
+                        </label>
+
+                        <input
+                            type="number"
+                            step="0.1"
+                            min="0.1"
+                            id="berat"
+                            name="berat"
+                            required
+                            placeholder="Contoh: 2.5"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                        >
+
+                    </div>
+
+
+                    <!-- TOTAL -->
+                    <div>
+
+                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                            Estimasi Total Harga
+                        </label>
+
+                        <input
+                            type="text"
+                            id="tampilTotal"
+                            readonly
+                            value="Rp 0"
+                            class="w-full px-4 py-2 bg-gray-100 border rounded-lg text-emerald-700 font-bold"
+                        >
+
+                        <!-- DATA TERSEMBUNYI -->
+                        <input
+                            type="hidden"
+                            id="hargaPerKg"
+                            name="hargaPerKg"
+                        >
+
+                        <input
+                            type="hidden"
+                            id="totalHarga"
+                            name="totalHarga"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- NOMOR HP -->
+                <div>
+
+                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                        Nomor WhatsApp / HP
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="noHp"
+                        name="noHp"
+                        required
+                        placeholder="Contoh: 08123456789"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    >
+
+                </div>
+
+
+                <!-- TOMBOL -->
+                <button
+                    type="submit"
+                    id="btnSubmit"
+                    class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:bg-emerald-700 transition duration-200"
+                >
+                    Kirim Data Setoran
+                </button>
+
+            </form>
+
+
+            <!-- NOTIFIKASI BERHASIL -->
+            <div
+                id="notifikasi"
+                class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg text-center font-medium"
+            >
+                Data setoran berhasil dikirim ke sistem! 🎉
+            </div>
+
+
+            <!-- NOTIFIKASI ERROR -->
+            <div
+                id="errorNotifikasi"
+                class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg text-center font-medium"
+            >
+                Data gagal dikirim. Silakan coba lagi.
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        /*
+        =====================================================
+        URL GOOGLE APPS SCRIPT
+        =====================================================
+        GANTI URL DI BAWAH DENGAN URL WEB APP TERBARU
+        DARI GOOGLE APPS SCRIPT
+        */
+
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbyA94WJcmCrZwQ1Whb4lVZ6C-QCJBW89n_I21FBwb4iYc2twukq5-mvx4lvSzPFB0Q/exec';
+
+
+        // ELEMENT HTML
+        const selectJenis =
+            document.getElementById('jenisSampah');
+
+        const inputBerat =
+            document.getElementById('berat');
+
+        const tampilTotal =
+            document.getElementById('tampilTotal');
+
+        const inputHargaPerKg =
+            document.getElementById('hargaPerKg');
+
+        const inputTotalHarga =
+            document.getElementById('totalHarga');
+
+        const form =
+            document.getElementById('formBankSampah');
+
+        const btnSubmit =
+            document.getElementById('btnSubmit');
+
+        const notifikasi =
+            document.getElementById('notifikasi');
+
+        const errorNotifikasi =
+            document.getElementById('errorNotifikasi');
+
+
+        /*
+        =====================================================
+        FUNGSI MENGHITUNG TOTAL
+        =====================================================
+        */
+
+        function hitungTotal() {
+
+            const selectedOption =
+                selectJenis.options[
+                    selectJenis.selectedIndex
+                ];
+
+            const harga =
+                parseFloat(
+                    selectedOption.getAttribute('data-harga')
+                ) || 0;
+
+            const berat =
+                parseFloat(inputBerat.value) || 0;
+
+            const total =
+                harga * berat;
+
+
+            // SIMPAN HARGA PER KG
+            inputHargaPerKg.value = harga;
+
+
+            // SIMPAN TOTAL
+            inputTotalHarga.value = total;
+
+
+            // TAMPILKAN TOTAL
+            tampilTotal.value =
+                'Rp ' +
+                total.toLocaleString('id-ID');
+
+        }
+
+
+        /*
+        =====================================================
+        EVENT PERUBAHAN JENIS SAMPAH
+        =====================================================
+        */
+
+        selectJenis.addEventListener(
+            'change',
+            hitungTotal
+        );
+
+
+        /*
+        =====================================================
+        EVENT PERUBAHAN BERAT
+        =====================================================
+        */
+
+        inputBerat.addEventListener(
+            'input',
+            hitungTotal
+        );
+
+
+        /*
+        =====================================================
+        PROSES KIRIM FORM
+        =====================================================
+        */
+
+        form.addEventListener(
+            'submit',
+            function(e) {
+
+                e.preventDefault();
+
+
+                // Pastikan total dihitung terlebih dahulu
+                hitungTotal();
+
+
+                // Sembunyikan notifikasi sebelumnya
+                notifikasi.classList.add('hidden');
+
+                errorNotifikasi.classList.add('hidden');
+
+
+                // Ubah tombol
+                btnSubmit.disabled = true;
+
+                btnSubmit.textContent =
+                    'Mengirim data...';
+
+
+                // Ambil data form
+                const formData =
+                    new FormData(form);
+
+
+                /*
+                =================================================
+                KIRIM DATA KE GOOGLE APPS SCRIPT
+                =================================================
+                */
+
+                fetch(
+                    scriptURL,
+                    {
+                        method: 'POST',
+
+                        body: formData,
+
+                        mode: 'no-cors'
+                    }
+                )
+
+                .then(function() {
+
+                    /*
+                    Dengan mode no-cors browser tidak dapat
+                    membaca response dari Google Apps Script.
+
+                    Tetapi request sudah dikirim.
+                    */
+
+                    notifikasi.classList.remove('hidden');
+
+
+                    // Reset form
+                    form.reset();
+
+
+                    // Reset tampilan total
+                    tampilTotal.value =
+                        'Rp 0';
+
+                    inputHargaPerKg.value =
+                        '';
+
+                    inputTotalHarga.value =
+                        '';
+
+
+                    // Aktifkan tombol kembali
+                    btnSubmit.disabled = false;
+
+                    btnSubmit.textContent =
+                        'Kirim Data Setoran';
+
+
+                    // Hilangkan notifikasi setelah 5 detik
+                    setTimeout(
+                        function() {
+
+                            notifikasi.classList.add(
+                                'hidden'
+                            );
+
+                        },
+                        5000
+                    );
+
+                })
+
+                .catch(function(error) {
+
+                    console.error(
+                        'Error:',
+                        error
+                    );
+
+
+                    errorNotifikasi.classList.remove(
+                        'hidden'
+                    );
+
+
+                    btnSubmit.disabled = false;
+
+                    btnSubmit.textContent =
+                        'Kirim Data Setoran';
+
+                });
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
